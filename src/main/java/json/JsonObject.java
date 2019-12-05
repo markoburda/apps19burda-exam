@@ -26,12 +26,14 @@ public class JsonObject extends Json {
     }
 
     public void add(JsonPair jsonPair) {
-        // ToDo
+        jArray.add(jsonPair);
     }
 
     public Json find(String name) {
-        // ToDo
-        return null;
+        for(Object jPair : jArray){
+            if(((JsonPair) jPair).key.equals(name))
+                return ((JsonPair) jPair).value;
+        }
     }
 
     public JsonObject projection(String... names) {
